@@ -1,0 +1,61 @@
+si se trabaja en local se recomienda  Asignar dominios   
+        Paso 1 ----------------------------------------------------------------------
+
+        C:\xampp\apache\conf\extra 
+
+        editar "httpd-vhosts.conf"
+
+        agregar 
+
+        <VirtualHost *:80>
+            DocumentRoot "C:/xampp/htdocs/cms-builder/api"
+            ServerName cms-builder-api.com
+        </VirtualHost>
+
+        <VirtualHost *:80>
+            DocumentRoot "C:/xampp/htdocs/cms-builder/cms"
+            ServerName cms-builder-dash.com
+        </VirtualHost>
+
+        <VirtualHost *:80>
+            DocumentRoot "C:/xampp/htdocs/cms-builder/web"
+            ServerName cms-builder-web.com
+        </VirtualHost>
+
+Paso 2 ----------------------------------------------------------------------
+
+        C:\Windows\System32\drivers\etc
+
+        editar "host"
+
+        agregar
+
+    127.0.0.1       cms-builder-api.com
+	127.0.0.1       cms-builder-dash.com
+	127.0.0.1       cms-builder-web.com
+-------------------------------------------------------------------------------
+
+index.php 	se trajo la plantilla y se crea el archivo que depura errores
+
+.htaccess 	realiza las rutas amigables
+
+template.php 	captura parametros de la url y se jalan con un link todas las hojas de estilos y plugins utilizados con su respectiva documentacion 
+
+install.php	se realiza todo el formulario de instalacion del cms 
+
+forms.js	el un parametro creado por boostrap 5 para la validación de formulario
+
+custom css 	es una hoja de estilos
+
+se recomienda crear la base de datos en phpmyadmin en utf8_general_ci
+
+install.controller.php se debe remplazar el nombre de la base de datos por el creado por usted (recuerde que solo debe crearla, mas no generar ninguna tabla), en caso de ya subir a un hosting, debe tambier remplazar la password
+tambien se realiza todo el sql para la creacion de la base de datos mediante la API
+
+Leer documentacion de la api, para creacion de nuevas tablas, conexion base de datos y api key
+
+
+
+
+
+

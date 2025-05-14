@@ -1,0 +1,44 @@
+[14-May-2025 22:38:45 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "CurlController" not found in C:\xampp\htdocs\cms-builder\cms\controllers\install.controller.php:161
+Stack trace:
+#0 C:\xampp\htdocs\cms-builder\cms\views\pages\install\install.php(170): InstallController->install()
+#1 C:\xampp\htdocs\cms-builder\cms\views\template.php(114): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\cms-builder\cms\controllers\template.controller.php(12): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\cms-builder\cms\index.php(24): Template_controller->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\cms-builder\cms\controllers\install.controller.php on line 161
+[14-May-2025 22:44:46 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'admins' already exists in C:\xampp\htdocs\cms-builder\cms\controllers\install.controller.php:136
+Stack trace:
+#0 C:\xampp\htdocs\cms-builder\cms\controllers\install.controller.php(136): PDOStatement->execute()
+#1 C:\xampp\htdocs\cms-builder\cms\views\pages\install\install.php(170): InstallController->install()
+#2 C:\xampp\htdocs\cms-builder\cms\views\template.php(114): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\cms-builder\cms\controllers\template.controller.php(12): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\cms-builder\cms\index.php(24): Template_controller->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\cms-builder\cms\controllers\install.controller.php on line 136
+[14-May-2025 22:44:53 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'admins' already exists in C:\xampp\htdocs\cms-builder\cms\controllers\install.controller.php:136
+Stack trace:
+#0 C:\xampp\htdocs\cms-builder\cms\controllers\install.controller.php(136): PDOStatement->execute()
+#1 C:\xampp\htdocs\cms-builder\cms\views\pages\install\install.php(170): InstallController->install()
+#2 C:\xampp\htdocs\cms-builder\cms\views\template.php(114): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\cms-builder\cms\controllers\template.controller.php(12): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\cms-builder\cms\index.php(24): Template_controller->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\cms-builder\cms\controllers\install.controller.php on line 136
+[14-May-2025 22:47:37 Europe/Berlin] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in C:\xampp\htdocs\cms-builder\cms\controllers\curl.controller.php:33
+Stack trace:
+#0 C:\xampp\htdocs\cms-builder\cms\controllers\install.controller.php(161): CurlController::request('admins?register...', 'POST', Array)
+#1 C:\xampp\htdocs\cms-builder\cms\views\pages\install\install.php(170): InstallController->install()
+#2 C:\xampp\htdocs\cms-builder\cms\views\template.php(114): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\cms-builder\cms\controllers\template.controller.php(12): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\cms-builder\cms\index.php(25): Template_controller->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\cms-builder\cms\controllers\curl.controller.php on line 33
+[14-May-2025 22:48:16 Europe/Berlin] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in C:\xampp\htdocs\cms-builder\cms\controllers\curl.controller.php:33
+Stack trace:
+#0 C:\xampp\htdocs\cms-builder\cms\controllers\install.controller.php(161): CurlController::request('admins?register...', 'POST', Array)
+#1 C:\xampp\htdocs\cms-builder\cms\views\pages\install\install.php(170): InstallController->install()
+#2 C:\xampp\htdocs\cms-builder\cms\views\template.php(114): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\cms-builder\cms\controllers\template.controller.php(12): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\cms-builder\cms\index.php(25): Template_controller->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\cms-builder\cms\controllers\curl.controller.php on line 33
