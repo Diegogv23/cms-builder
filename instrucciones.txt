@@ -52,9 +52,11 @@ se recomienda crear la base de datos en phpmyadmin en utf8_general_ci
 install.controller.php se debe remplazar el nombre de la base de datos por el creado por usted (recuerde que solo debe crearla, mas no generar ninguna tabla), en caso de ya subir a un hosting, debe tambier remplazar la password
 tambien se realiza todo el sql para la creacion de la base de datos mediante la API
 
-Leer documentacion de la api, para creacion de nuevas tablas, conexion base de datos y api key
+Leer documentacion de la api, para creacion de nuevas tablas, conexion base de datos, api key y demas funcionalidades
 
-curlcontroller se realizan peticiones a la api
+curl.controller.php se realizan peticiones a la api
+
+login.php se implementa todo el login una vez se realiza la instalacion del sistema CMS
 
 
 
