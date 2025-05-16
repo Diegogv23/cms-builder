@@ -54,6 +54,8 @@ tambien se realiza todo el sql para la creacion de la base de datos mediante la 
 
 Leer documentacion de la api, para creacion de nuevas tablas, conexion base de datos y api key
 
+curlcontroller se realizan peticiones a la api
+
 
 
 
