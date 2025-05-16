@@ -12,9 +12,9 @@ class Connection{
 
 		$infoDB = array(
 
-			"database" => "cms-builder",
+			"database" => "cms_builder",
 			"user" => "root",
-			"pass" => ""
+			"pass" => "",
 
 		);
 

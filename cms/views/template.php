@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /*=============================================
 Capturar parámetros de la url
@@ -8,18 +8,75 @@ $routesArray = explode("/", $_SERVER["REQUEST_URI"]);
 array_shift($routesArray);
 
 foreach ($routesArray as $key => $value) {
-	
-	$routesArray[$key] = explode("?",$value)[0];
+
+	$routesArray[$key] = explode("?", $value)[0];
+}
+
+$url = "admins";
+$method = "GET";
+$fields = array();
+
+$adminTable = CurlController::request($url, $method, $fields);
+
+if ($adminTable->status == 404) {
+
+	$admin = null;
+} else {
+
+	$admin = $adminTable->results[0];
 }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/18234/18234191.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<?php if (!empty($admin)): ?>
+
+		<title><?php echo $admin->title_admin ?></title>
+
+		<?php if ($admin->font_admin != "null"): ?>
+
+			<?php echo $admin->font_admin ?>
+
+		<?php endif ?>
+
+		<style>
+
+			<?php if ($admin->font_admin != "null"):?>
+
+			body{
+				font-family: <?php echo str_replace("+"," ",explode("=",explode(":",explode("?",$admin->font_admin)[1])[0])[1]) ?>, sans-serif !important;
+			}
+
+			<?php endif ?>
+
+			.backColor{
+				background: <?php echo $admin->color_admin ?> !important;
+				color: #FFF !important;
+				border: 0 !important;
+			}
+
+			.form-check-input:checked{
+				background-color: <?php echo $admin->color_admin ?> !important;
+				border-color: <?php echo $admin->color_admin ?> !important;
+			}
+
+		</style>
+
+	<?php else: ?>
+
+		<title>CMS BUILDER</title>
+
+	<?php endif ?>	
+
 
 	<!--=============================================
 	Alertas personalizadas
@@ -32,7 +89,7 @@ foreach ($routesArray as $key => $value) {
 	===============================================-->
 
 	<!-- https://www.w3schools.com/bootstrap5/ -->
-	<link rel="stylesheet" href="/views/assets/plugins/bootstrap5/bootstrap.min.css" >
+	<link rel="stylesheet" href="/views/assets/plugins/bootstrap5/bootstrap.min.css">
 	<!-- https://fontawesome.com/v5/search -->
 	<link rel="stylesheet" href="/views/assets/plugins/fontawesome-free/css/all.min.css">
 	<!-- https://icons.getbootstrap.com/ -->
@@ -47,15 +104,15 @@ foreach ($routesArray as $key => $value) {
 	<link rel="stylesheet" href="/views/assets/plugins/tags-input/tags-input.css">
 	<!-- https://select2.org/ -->
 	<link rel="stylesheet" href="/views/assets/plugins/select2/select2.min.css">
-    <link rel="stylesheet" href="/views/assets/plugins/select2/select2-bootstrap4.min.css">
-    <!-- https://xdsoft.net/jqplugins/datetimepicker/ -->
-    <link rel="stylesheet" href="/views/assets/plugins/datetimepicker/datetimepicker.min.css">
-    <!-- https://summernote.org -->	
-    <link rel="stylesheet" href="/views/assets/plugins/summernote/summernote-bs4.min.css"> 
-    <link rel="stylesheet" href="/views/assets/plugins/summernote/summernote.min.css">
-    <link rel="stylesheet" href="/views/assets/plugins/summernote/emoji.css">
-    <!-- https://codemirror.net/ -->
-    <link rel="stylesheet" href="/views/assets/plugins/codemirror/codemirror.css">
+	<link rel="stylesheet" href="/views/assets/plugins/select2/select2-bootstrap4.min.css">
+	<!-- https://xdsoft.net/jqplugins/datetimepicker/ -->
+	<link rel="stylesheet" href="/views/assets/plugins/datetimepicker/datetimepicker.min.css">
+	<!-- https://summernote.org -->
+	<link rel="stylesheet" href="/views/assets/plugins/summernote/summernote-bs4.min.css">
+	<link rel="stylesheet" href="/views/assets/plugins/summernote/summernote.min.css">
+	<link rel="stylesheet" href="/views/assets/plugins/summernote/emoji.css">
+	<!-- https://codemirror.net/ -->
+	<link rel="stylesheet" href="/views/assets/plugins/codemirror/codemirror.css">
 	<link rel="stylesheet" href="/views/assets/plugins/codemirror/monokai.css">
 
 	<!--=============================================
@@ -69,28 +126,28 @@ foreach ($routesArray as $key => $value) {
 	<!-- https://www.w3schools.com/bootstrap5/ -->
 	<script src="/views/assets/plugins/bootstrap5/bootstrap.bundle.min.js"></script>
 	<!-- https://sweetalert2.github.io/ -->
-	<script src="/views/assets/plugins/sweetalert/sweetalert.min.js"></script> 
+	<script src="/views/assets/plugins/sweetalert/sweetalert.min.js"></script>
 	<!-- https://www.jqueryscript.net/demo/Google-Inbox-Style-Linear-Preloader-Plugin-with-jQuery-CSS3/ -->
-	<script src="/views/assets/plugins/material-preloader/material-preloader.js"></script> 
+	<script src="/views/assets/plugins/material-preloader/material-preloader.js"></script>
 	<!-- https://codeseven.github.io/toastr/demo.html -->
 	<script src="/views/assets/plugins/toastr/toastr.min.js"></script>
 	<!-- http://josecebe.github.io/twbs-pagination/ -->
-	<script src="/views/assets/plugins/twbs-pagination/twbs-pagination.min.js"></script> 
+	<script src="/views/assets/plugins/twbs-pagination/twbs-pagination.min.js"></script>
 	<!-- https://momentjs.com/ -->
 	<script src="/views/assets/plugins/moment/moment.min.js"></script>
 	<script src="/views/assets/plugins/moment/moment-with-locales.min.js"></script>
 	<!--  https://www.daterangepicker.com/ -->
-	<script src="/views/assets/plugins/daterangepicker/daterangepicker.js"></script>	
+	<script src="/views/assets/plugins/daterangepicker/daterangepicker.js"></script>
 	<!-- https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples/ -->
-	<script src="/views/assets/plugins/tags-input/tags-input.js"></script> 
+	<script src="/views/assets/plugins/tags-input/tags-input.js"></script>
 	<!-- https://select2.org/ -->
 	<script src="/views/assets/plugins/select2/select2.full.min.js"></script>
 	<!-- https://xdsoft.net/jqplugins/datetimepicker/ -->
 	<script src="/views/assets/plugins/datetimepicker/datetimepicker.full.min.js"></script>
-	<!-- https://summernote.org -->	
+	<!-- https://summernote.org -->
 	<script src="/views/assets/plugins/summernote/summernote.min.js"></script>
 	<script src="/views/assets/plugins/summernote/summernote-bs4.js"></script>
-    <script src="/views/assets/plugins/summernote/summernote-code-beautify-plugin.js"></script>
+	<script src="/views/assets/plugins/summernote/summernote-code-beautify-plugin.js"></script>
 	<script src="/views/assets/plugins/summernote/emoji.config.js"></script>
 	<script src="/views/assets/plugins/summernote/tam-emoji.min.js"></script>
 	<!-- https://codemirror.net/ -->
@@ -107,11 +164,20 @@ foreach ($routesArray as $key => $value) {
 
 
 </head>
+
 <body>
 
-	<?php 
+	<?php
 
-	include "pages/install/install.php";
+	if ($admin == null) {
+
+		include "pages/install/install.php";
+	} else {
+
+		include "pages/login/login.php";
+	}
+
+
 
 	?>
 
@@ -122,6 +188,7 @@ foreach ($routesArray as $key => $value) {
 
 	<script src="/views/assets/js/forms/forms.js"></script>
 
-	
+
 </body>
+
 </html>

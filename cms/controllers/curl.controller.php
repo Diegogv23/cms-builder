@@ -6,9 +6,7 @@ class CurlController
                 Peticiones a la api 
     ===================================================*/
 
-    static public function request($url, $method, $fields)
-    {
-
+    static public function request($url,$method,$fields){
 
         $curl = curl_init();
 

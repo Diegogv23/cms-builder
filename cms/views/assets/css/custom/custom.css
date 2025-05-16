@@ -1,8 +1,63 @@
-a:link, a:visited, a:hover, a:active{
-    text-decoration: none !important;
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none !important;
 }
 
-.rounded{
+.rounded {
+  border-radius: 7px !important;
+}
 
-    border-radius: 7px !important;
+.backgroundImage {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.text-muted a {
+  color: #cccccc;
+}
+
+.backgroundImage {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.text-muted a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-reservados {
+  color: #ffffff;
+}
+
+.form-wrapper {
+  margin-top: 60px;
+}
+
+.card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.3)
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.form-control:focus {
+  border-color: #666;
+  box-shadow: 0 0 0 0.2rem rgba(100, 100, 100, 0.25);
 }
