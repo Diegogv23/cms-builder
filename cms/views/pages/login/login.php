@@ -76,6 +76,16 @@
                     </div>
 
                     <button type="submit" class="btn btn-dark btn-block w-100 rounded mt-3 backColor">Entrar</button>
+
+                    <?php 
+                    
+                    require_once "controllers/admins.controller.php";
+                    $login = new AdminsController();
+                    $login -> login();
+
+                    ?>
+
+
                 </form>
             </div>
         </div>
