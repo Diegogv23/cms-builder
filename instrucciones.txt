@@ -58,6 +58,8 @@ curl.controller.php se realizan peticiones a la api
 
 login.php se implementa todo el login una vez se realiza la instalacion del sistema CMS
 
+admins.controller.php realiza todo el sistema de validacion de identidad de los administradores una vez se instala el sistema 
+
 
 
 
