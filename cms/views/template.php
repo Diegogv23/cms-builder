@@ -18,12 +18,12 @@ $fields = array();
 
 $adminTable = CurlController::request($url, $method, $fields);
 
-if ($adminTable->status == 404) {
+$admin = null;
 
-	$admin = null;
-} else {
-
-	$admin = $adminTable->results[0];
+if ($adminTable !== null && isset($adminTable->status) && $adminTable->status != 404) {
+    if (isset($adminTable->results) && is_array($adminTable->results) && count($adminTable->results) > 0) {
+        $admin = $adminTable->results[0];
+    }
 }
 
 ?>
