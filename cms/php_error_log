@@ -1,22 +1,20 @@
-[16-Jun-2025 08:59:19 Europe/Berlin] PHP Warning:  Undefined variable $admin in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 172
-[16-Jun-2025 08:59:19 Europe/Berlin] PHP Warning:  Undefined variable $admin in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 172
-[16-Jun-2025 08:59:49 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 08:59:49 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:00:00 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:00:00 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:00:10 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:00:10 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:00:10 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:00:10 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:07:53 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:07:53 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:08:01 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:08:01 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:12:08 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:12:08 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:12:11 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:12:11 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:14:31 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:14:31 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:16:51 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
-[16-Jun-2025 09:16:51 Europe/Berlin] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\cms-builder\cms\views\template.php on line 56
+[27-Jun-2025 08:04:47 Europe/Berlin] PHP Warning:  Attempt to read property "symbol_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 5
+[27-Jun-2025 08:04:47 Europe/Berlin] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 6
+[27-Jun-2025 08:04:48 Europe/Berlin] PHP Warning:  Attempt to read property "symbol_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 5
+[27-Jun-2025 08:04:48 Europe/Berlin] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 6
+[27-Jun-2025 08:04:48 Europe/Berlin] PHP Warning:  Attempt to read property "symbol_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 5
+[27-Jun-2025 08:04:48 Europe/Berlin] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 6
+[27-Jun-2025 08:04:49 Europe/Berlin] PHP Warning:  Attempt to read property "symbol_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 5
+[27-Jun-2025 08:04:49 Europe/Berlin] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 6
+[27-Jun-2025 08:04:49 Europe/Berlin] PHP Warning:  Attempt to read property "symbol_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 5
+[27-Jun-2025 08:04:49 Europe/Berlin] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 6
+[27-Jun-2025 08:06:16 Europe/Berlin] PHP Warning:  Attempt to read property "symbol_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 5
+[27-Jun-2025 08:06:16 Europe/Berlin] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 6
+[27-Jun-2025 08:06:16 Europe/Berlin] PHP Warning:  Attempt to read property "symbol_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 5
+[27-Jun-2025 08:06:16 Europe/Berlin] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 6
+[27-Jun-2025 08:06:17 Europe/Berlin] PHP Warning:  Attempt to read property "symbol_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 5
+[27-Jun-2025 08:06:17 Europe/Berlin] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 6
+[27-Jun-2025 08:06:18 Europe/Berlin] PHP Warning:  Attempt to read property "symbol_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 5
+[27-Jun-2025 08:06:18 Europe/Berlin] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 6
+[27-Jun-2025 08:53:41 Europe/Berlin] PHP Warning:  Attempt to read property "symbol_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 5
+[27-Jun-2025 08:53:41 Europe/Berlin] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 6

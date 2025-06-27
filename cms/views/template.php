@@ -1,6 +1,12 @@
 <?php
 
 /*=============================================
+Inicializacion de sesión
+=============================================*/
+ob_start();
+session_start();
+
+/*=============================================
 Capturar parámetros de la url
 =============================================*/
 
@@ -8,7 +14,6 @@ $routesArray = explode("/", $_SERVER["REQUEST_URI"]);
 array_shift($routesArray);
 
 foreach ($routesArray as $key => $value) {
-
 	$routesArray[$key] = explode("?", $value)[0];
 }
 
@@ -21,9 +26,9 @@ $adminTable = CurlController::request($url, $method, $fields);
 $admin = null;
 
 if ($adminTable !== null && isset($adminTable->status) && $adminTable->status != 404) {
-    if (isset($adminTable->results) && is_array($adminTable->results) && count($adminTable->results) > 0) {
-        $admin = $adminTable->results[0];
-    }
+	if (isset($adminTable->results) && is_array($adminTable->results) && count($adminTable->results) > 0) {
+		$admin = $adminTable->results[0];
+	}
 }
 
 ?>
@@ -39,43 +44,56 @@ if ($adminTable !== null && isset($adminTable->status) && $adminTable->status !=
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 	<?php if (!empty($admin)): ?>
-
 		<title><?php echo $admin->title_admin ?></title>
 
 		<?php if ($admin->font_admin != "null"): ?>
-
 			<?php echo $admin->font_admin ?>
-
 		<?php endif ?>
 
 		<style>
-
-			<?php if ($admin->font_admin != "null"):?>
-
-			body{
-				font-family: <?php echo str_replace("+"," ",explode("=",explode(":",explode("?",$admin->font_admin)[1])[0])[1]) ?>, sans-serif !important;
+			<?php
+			// Extraer nombre de la fuente de manera segura
+			$fontName = "sans-serif";
+			if (!empty($admin->font_admin) && $admin->font_admin != "null") {
+				$fontUrlParts = explode("?", $admin->font_admin);
+				if (isset($fontUrlParts[1])) {
+					$queryParts = explode(":", $fontUrlParts[1]);
+					if (isset($queryParts[0])) {
+						$keyValue = explode("=", $queryParts[0]);
+						if (isset($keyValue[1])) {
+							$fontName = str_replace("+", " ", $keyValue[1]);
+						}
+					}
+				}
+			}
+			?>body {
+				font-family: <?php echo $fontName ?>, sans-serif !important;
 			}
 
-			<?php endif ?>
+			/*=============================================
+			Color del dashboard
+			=============================================*/
 
-			.backColor{
+			.backColor {
 				background: <?php echo $admin->color_admin ?> !important;
 				color: #FFF !important;
 				border: 0 !important;
 			}
 
-			.form-check-input:checked{
+			.form-check-input:checked {
 				background-color: <?php echo $admin->color_admin ?> !important;
 				border-color: <?php echo $admin->color_admin ?> !important;
 			}
 
+			.textColor {
+				color: <?php echo $admin->color_admin ?> !important;
+			}
 		</style>
 
 	<?php else: ?>
-
 		<title>CMS BUILDER</title>
+	<?php endif ?>
 
-	<?php endif ?>	
 
 
 	<!--=============================================
@@ -161,6 +179,7 @@ if ($adminTable !== null && isset($adminTable->status) && $adminTable->status !=
 	CUSTOM CSS
 	===============================================-->
 	<link rel="stylesheet" href="/views/assets/css/custom/custom.css">
+	<link rel="stylesheet" href="/views/assets/css/dashboard/dashboard.css">
 
 
 </head>
@@ -169,23 +188,70 @@ if ($adminTable !== null && isset($adminTable->status) && $adminTable->status !=
 
 	<?php
 
-	if ($admin == null) {
+	if (!isset($_SESSION["admin"])) {
 
-		include "pages/install/install.php";
-	} else {
+		if ($admin == null) {
 
-		include "pages/login/login.php";
+			include "pages/install/install.php";
+		} else {
+
+			include "pages/login/login.php";
+		}
 	}
-
-
 
 	?>
 
+	<?php if (isset($_SESSION["admin"])): ?>
+
+		<!--=============================================
+		Plantilla de CMS
+		===============================================-->
+		<div class="d-flex backDashboard" id="wrapper">
+
+			<!--=============================================
+			SIDEBAR
+			===============================================-->
+
+			<?php include "modules/sidebar.php"; ?>
+
+			<div id="page-content-wrapper">
+
+				<!--=============================================
+				NAV
+				===============================================-->
+
+				<?php include "modules/nav.php"; ?>
+
+				<!--=============================================
+				MAIN PAGE
+				===============================================-->
+
+				<?php if (!empty($routesArray[0])): ?>
+
+					<?php if ($routesArray[0] == "logout"): ?>
+
+						<?php include "pages/" . $routesArray[0] . "/" . $routesArray[0] . ".php"; ?>
+
+					<?php endif ?>
+
+					<?php include "pages/dynamic/dynamic.php"; ?>
+
+				<?php endif ?>
+				
+				<?php include "modules/modals/profile.php"; ?>
+
+
+			</div>
+
+		</div>
+
+	<?php endif ?>
 
 	<!--=============================================
 	CUSTOM JS
 	===============================================-->
 
+	<script src="/views/assets/js/dashboard/dashboard.js"></script>
 	<script src="/views/assets/js/forms/forms.js"></script>
 
 

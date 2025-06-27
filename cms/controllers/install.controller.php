@@ -9,7 +9,7 @@ class InstallController{
 	static public function infoDatabase(){
 
 		$infoDB = array(
-			"database" => "cms_builder",
+			"database" => "pos",
 			"user" => "root",
 			"pass" => ""
 		);

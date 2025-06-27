@@ -7,6 +7,7 @@ class AdminsController{
     ==========================*/
 
     public function login(){
+
         if(isset($_POST["email_admin"])){
             
                 echo '<script>
@@ -31,13 +32,41 @@ class AdminsController{
                     Validar estado admin
                     ==========================*/
 
-                    
+                    if($login->results[0]->status_admin == 0){
+
+                       echo '<div class="alert alert-danger mt-3 rounded">Error al ingresar: Administrador desactivado</div>
+
+                        <script>
+                
+                            fncMatPreloader("off");
+                            fncFormatInputs();
+                            fncToastr("error", "Error al ingresar: Administrador desactivado");
+
+                        </script>';
+
+                        return;
+                    }
+
+                    /*==========================
+                    Variable session admin
+                    ==========================*/
+
+                    $_SESSION["admin"] = $login->results[0];
+
+				        echo '<script>
+
+                            fncMatPreloader("off");
+                            fncFormatInputs();
+                            location.reload();
+
+				        </script>';
+                        
 
                 }else{
                         
-                    echo '<div class="alert alert-danger mt-3 rounded">Error al ingresar: Correo o contraseña incorrectos</div>';
+                    echo '<div class="alert alert-danger mt-3 rounded">Error al ingresar: Correo o contraseña incorrectos</div>
 
-                    echo '<script>
+                    <script>
                 
                     fncMatPreloader("off");
                     fncFormatInputs();

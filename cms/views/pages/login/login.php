@@ -92,3 +92,17 @@
 
 
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+	const togglePassword = document.querySelector(".input-group-text i");
+	const passwordInput = document.getElementById("password_admin");
+
+	togglePassword.addEventListener("click", function () {
+		const isPassword = passwordInput.type === "password";
+		passwordInput.type = isPassword ? "text" : "password";
+		this.classList.toggle("bi-eye");
+		this.classList.toggle("bi-eye-slash");
+	});
+});
+</script>

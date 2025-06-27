@@ -17,11 +17,6 @@ si se trabaja en local se recomienda  Asignar dominios
             ServerName cms-builder-dash.com
         </VirtualHost>
 
-        <VirtualHost *:80>
-            DocumentRoot "C:/xampp/htdocs/cms-builder/web"
-            ServerName cms-builder-web.com
-        </VirtualHost>
-
 Paso 2 ----------------------------------------------------------------------
 
         C:\Windows\System32\drivers\etc
