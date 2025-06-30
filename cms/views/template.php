@@ -237,13 +237,17 @@ if ($adminTable !== null && isset($adminTable->status) && $adminTable->status !=
 					<?php include "pages/dynamic/dynamic.php"; ?>
 
 				<?php endif ?>
-				
-				<?php include "modules/modals/profile.php"; ?>
-
 
 			</div>
 
 		</div>
+
+		<?php
+		include "modules/modals/profile.php";
+		require_once "controllers/admins.controller.php";
+		$update = new AdminsController();
+		$update->updateAdmin();
+		?>
 
 	<?php endif ?>
 
