@@ -66,27 +66,38 @@ if ($adminTable !== null && isset($adminTable->status) && $adminTable->status !=
 					}
 				}
 			}
-			?>body {
-				font-family: <?php echo $fontName ?>, sans-serif !important;
+			?>
+			body {
+				font-family:
+					<?php echo $fontName ?>
+					, sans-serif !important;
 			}
 
 			/*=============================================
-			Color del dashboard
-			=============================================*/
+				Color del dashboard
+				=============================================*/
 
 			.backColor {
-				background: <?php echo $admin->color_admin ?> !important;
+				background:
+					<?php echo $admin->color_admin ?>
+					!important;
 				color: #FFF !important;
 				border: 0 !important;
 			}
 
 			.form-check-input:checked {
-				background-color: <?php echo $admin->color_admin ?> !important;
-				border-color: <?php echo $admin->color_admin ?> !important;
+				background-color:
+					<?php echo $admin->color_admin ?>
+					!important;
+				border-color:
+					<?php echo $admin->color_admin ?>
+					!important;
 			}
 
 			.textColor {
-				color: <?php echo $admin->color_admin ?> !important;
+				color:
+					<?php echo $admin->color_admin ?>
+					!important;
 			}
 		</style>
 
@@ -111,7 +122,8 @@ if ($adminTable !== null && isset($adminTable->status) && $adminTable->status !=
 	<!-- https://fontawesome.com/v5/search -->
 	<link rel="stylesheet" href="/views/assets/plugins/fontawesome-free/css/all.min.css">
 	<!-- https://icons.getbootstrap.com/ -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
 	<!-- https://www.jqueryscript.net/demo/Google-Inbox-Style-Linear-Preloader-Plugin-with-jQuery-CSS3/#google_vignette -->
 	<link rel="stylesheet" href="/views/assets/plugins/material-preloader/material-preloader.css">
 	<!-- https://codeseven.github.io/toastr/demo.html -->
@@ -247,6 +259,17 @@ if ($adminTable !== null && isset($adminTable->status) && $adminTable->status !=
 		require_once "controllers/admins.controller.php";
 		$update = new AdminsController();
 		$update->updateAdmin();
+
+		if ($_SESSION["admin"]->rol_admin == "superadmin") {
+
+			include "views/modules/modals/pages.php";
+
+			require_once "controllers/pages.controller.php";
+			$page = new PagesController();
+			$page->managePage();
+
+		}
+
 		?>
 
 	<?php endif ?>
@@ -257,6 +280,7 @@ if ($adminTable !== null && isset($adminTable->status) && $adminTable->status !=
 
 	<script src="/views/assets/js/dashboard/dashboard.js"></script>
 	<script src="/views/assets/js/forms/forms.js"></script>
+	<script src="/views/assets/js/pages/pages.js"></script>
 
 
 </body>

@@ -112,6 +112,10 @@ $(document).on("change",".cleanIcon",function(){
 
     $(this).val($(this).val().split('"')[1]);
 
+  }else{
+    
+    $(this).val($(this).val());
+
   }
 
 })

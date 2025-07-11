@@ -1,19 +1,21 @@
-<?php 
-// Asegúrate de que la sesión esté activa
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+<?php
+
+$url = "pages?orderBy=order_page&orderMode=ASC";
+$method = "GET";
+$fields = array();
+
+$pages = CurlController::request($url, $method, $fields);
+
+if ($pages->status == 200) {
+
+    $pages = $pages->results;
+
+} else {
+
+    $pages = array();
+
 }
 
-// Validar si la sesión del admin existe
-if (isset($_SESSION["admin"])) {
-    $admin = $_SESSION["admin"];
-} else {
-    // Si no hay sesión, puedes redirigir o cargar valores por defecto
-    $admin = (object)[
-        "symbol_admin" => "",
-        "title_admin" => ""
-    ];
-}
 ?>
 
 <div class="bg-white shadow" id="sidebar-wrapper">
@@ -27,24 +29,32 @@ if (isset($_SESSION["admin"])) {
 
     <ul class="list-group list-group-flush" id="sortable">
 
-        <li class="list-group-item list-group-item-action position-relative">
-            <a class="bg-transparent text-dark" href="/inicio">
-                <i class="bi bi-house-door-fill textColor"></i>
-                <span class="menu-text">Inicio</span>
-            </a>
-        </li>
+        <?php if (!empty($pages)): ?>
 
-        <li class="list-group-item list-group-item-action position-relative">
-            <a class="bg-transparent text-dark" href="/admins">
-                <i class="bi bi-person-fill-gear textColor"></i>
-                <span class="menu-text">Administradores</span>
-            </a>
-        </li>
+            <?php foreach ($pages as $key => $value): ?>
+
+                <li class="list-group-item list-group-item-action position-relative">
+
+                    <a class="bg-transparent text-dark" href="/<?php echo $value->url_page; ?>">
+
+                        <i class="<?php echo $value->icon_page ?> textColor"></i>
+                        <span class="menu-text"><?php echo $value->title_page ?></span>
+                    </a>
+                </li>
+
+            <?php endforeach; ?>
+
+        <?php endif; ?>
 
     </ul>
 
-    <hr class="borderDashboard">
+    <?php if ($_SESSION["admin"]->rol_admin == "superadmin"): ?>
 
-    <button class="btn btn-default border rounded btn-sm ms-3 menu-text mt-2">Agregar Pagina</button>
+        <hr class="borderDashboard">
+
+        <button class="btn btn-default border rounded btn-sm ms-3 menu-text mt-2 myPage">Agregar Pagina</button>
+
+
+    <?php endif ?>
 
 </div>

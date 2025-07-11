@@ -1,0 +1,8 @@
+[02-Jul-2025 08:41:34 Europe/Berlin] PHP Warning:  Attempt to read property "symbol_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 28
+[02-Jul-2025 08:41:34 Europe/Berlin] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\sidebar.php on line 29
+[02-Jul-2025 08:41:34 Europe/Berlin] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\modals\profile.php on line 65
+[02-Jul-2025 08:41:34 Europe/Berlin] PHP Warning:  Attempt to read property "symbol_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\modals\profile.php on line 83
+[02-Jul-2025 08:41:34 Europe/Berlin] PHP Warning:  Attempt to read property "font_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\modals\profile.php on line 100
+[02-Jul-2025 08:41:34 Europe/Berlin] PHP Warning:  Attempt to read property "font_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\modals\profile.php on line 101
+[02-Jul-2025 08:41:34 Europe/Berlin] PHP Warning:  Attempt to read property "color_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\modals\profile.php on line 114
+[02-Jul-2025 08:41:34 Europe/Berlin] PHP Warning:  Attempt to read property "back_admin" on null in C:\xampp\htdocs\cms-builder\cms\views\modules\modals\profile.php on line 129
